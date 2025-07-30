@@ -158,33 +158,24 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Yuppa Flow Logo" />
-      <div class="logo-text">
-        <div class="main">yuppa</div>
-        <div class="flow">Flow</div>
+  <main>
+  <div id="header"></div>
+    <section class="hero">
+      <h1>Ваш ментальний добробут — наша турбота</h1>
+      <p>Застосунок Yuppa допомагає зберігати баланс, відстежувати настрій та проходити опитування анонімно.</p>
+      <div class="buttons">
+      <!-- <a href="#">Завантажити для Android</a>-->
+      <!-- <a href="#">Завантажити для iOS</a>-->
       </div>
-    </div>
-    <nav>
-      <a href="#about">Про застосунок</a>
-      <a href="#download">Завантажити</a>
-      <a href="#policy">Політика</a>
-    </nav>
-  </header>
+    </section>
+  </main>
 
-  <section class="hero">
-    <h1>Ваш ментальний добробут — наша турбота</h1>
-    <p>Застосунок Yuppa допомагає зберігати баланс, відстежувати настрій та проходити опитування анонімно.</p>
-    <div class="buttons">
-      <a href="#">Завантажити для Android</a>
-      <a href="#">Завантажити для iOS</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Yuppa. Всі права захищені.
-  </footer>
+ <div id="footer"></div>
 
 </body>
 </html>
+
+<script>
+  fetch('header.html').then(r => r.text()).then(t => document.getElementById('header').innerHTML = t);
+  fetch('footer.html').then(r => r.text()).then(t => document.getElementById('footer').innerHTML = t);
+</script>
