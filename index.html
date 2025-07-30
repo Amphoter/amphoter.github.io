@@ -8,73 +8,33 @@
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    body {
       margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
       font-family: 'Inter', sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
       background-color: #ffffff;
-    }
-
-    header {
-      background-color: #141414;
-      color: #F3C9DC;
-      padding: 16px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .logo-text {
       display: flex;
       flex-direction: column;
-      line-height: 1;
     }
 
-    .logo-text .main {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #ffffff;
+    #header,
+    #footer {
+      flex-shrink: 0;
     }
 
-    .logo-text .flow {
-      font-size: 1em;
-      color: #455CFF;
-      margin-top: -2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #F3C9DC;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .hero {
-      flex: 1;
+    main {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .hero {
+      width: 100%;
       padding: 60px 30px;
       background: linear-gradient(to right, #141414, #455CFF);
       color: #ffffff;
@@ -90,6 +50,8 @@
       font-size: 1.2em;
       margin-bottom: 40px;
       max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .buttons {
@@ -113,14 +75,6 @@
       background-color: #455CFF;
     }
 
-    footer {
-      background-color: #141414;
-      color: #ffffff;
-      text-align: center;
-      padding: 16px;
-      font-size: 0.9em;
-    }
-
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2em;
@@ -128,15 +82,6 @@
 
       .hero p {
         font-size: 1em;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 10px;
       }
     }
 
@@ -158,24 +103,25 @@
 </head>
 <body>
 
-  <main>
   <div id="header"></div>
+
+  <main>
     <section class="hero">
       <h1>Ваш ментальний добробут — наша турбота</h1>
       <p>Застосунок Yuppa допомагає зберігати баланс, відстежувати настрій та проходити опитування анонімно.</p>
       <div class="buttons">
-      <!-- <a href="#">Завантажити для Android</a>-->
-      <!-- <a href="#">Завантажити для iOS</a>-->
+        <!-- <a href="#">Завантажити для Android</a> -->
+        <!-- <a href="#">Завантажити для iOS</a> -->
       </div>
     </section>
   </main>
 
- <div id="footer"></div>
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html').then(r => r.text()).then(t => document.getElementById('header').innerHTML = t);
+    fetch('footer.html').then(r => r.text()).then(t => document.getElementById('footer').innerHTML = t);
+  </script>
 
 </body>
 </html>
-
-<script>
-  fetch('header.html').then(r => r.text()).then(t => document.getElementById('header').innerHTML = t);
-  fetch('footer.html').then(r => r.text()).then(t => document.getElementById('footer').innerHTML = t);
-</script>
